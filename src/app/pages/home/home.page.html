@@ -1,0 +1,62 @@
+<!--Section: Products v.1-->
+<section class="text-center py-5">
+  <!-- Search form -->
+  <form class="search-from">
+    <div class="md-form active-red active-red-2">
+      <input class="form-control" type="search" id="search1" aria-label="Search" mdbInput #searchBox (input)="search(searchBox.value)">
+      <label for="search1">Search</label>
+    </div>
+  </form>
+
+  <!--Grid row-->
+  <div class="row">
+    <!--Grid column-->
+    <div class="d-flex align-items-stretch col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-5" *ngFor="let movie of movies$ | async" >
+      <!--Card-->
+      <mdb-card cascade="true" narrower="true" class="card-ecommerce">
+        <!--Card image-->
+        <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+          <mdb-card-img src="https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+            alt="{{movie.Title}}"></mdb-card-img>
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+        <!--Card image-->
+        <!--Card content-->
+        <mdb-card-body cascade="true" class="text-center">
+          <!--Category & Title-->
+          <a class="grey-text">
+            <h5>{{movie.Year}}</h5>
+          </a>
+          <mdb-card-title>
+            <h6>
+              <strong>
+                <a routerLink="/single/{{movie.id}}">{{movie.Title}}</a>
+              </strong>
+            </h6>
+          </mdb-card-title>
+          <!--Card footer-->
+          <mdb-card-footer class="px-1">
+            <span class="float-left font-weight-bold">
+              <strong>{{movie.imdbRating}}/10</strong>
+            </span>
+            <span class="float-right">
+              <a data-toggle="tooltip" data-placement="top" title="Share">
+                <mdb-icon fas icon="share-alt" class="grey-text ml-3"></mdb-icon>
+              </a>
+              <a (click)="favoriteToggle(movie.id)" class="active" data-toggle="tooltip" data-placement="top" title="Add to my favorites">
+                <mdb-icon fas icon="star" [class.amber-text]="favorites[movie.id]?.isFavorite" class="ml-3"></mdb-icon>
+              </a>
+            </span>
+          </mdb-card-footer>
+        </mdb-card-body>
+        <!--Card content-->
+      </mdb-card>
+      <!--Card-->
+    </div>
+    <!--Grid column-->
+  </div>
+  <!--Grid row-->
+</section>
+<!--Section: Products v.1-->

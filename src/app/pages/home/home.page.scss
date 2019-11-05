@@ -1,0 +1,8 @@
+.search-from {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	& input {
+		border-bottom: 1px solid #d32f2f;
+	}
+}
