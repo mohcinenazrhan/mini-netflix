@@ -1,0 +1,65 @@
+<!-- Section: Blog v.1 -->
+<section class="py-5">
+
+  <!-- Grid row -->
+  <div class="row">
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+    <!-- Featured image -->
+    <div class="view overlay rounded z-depth-2 waves-light" mdbWavesEffect>
+      <img class="img-fluid" src="{{movie?.Poster}}" alt="Sample image">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Category -->
+      <a href="#!" class="red-text">
+        <mdb-icon fas icon="video" class="pr-2"></mdb-icon>{{movie?.Type}}
+      </a>
+      
+      <p class="h6"><a class="grey-text">{{movie?.Year}}</a> | <a>{{movie?.Genre}}</a></p>
+      <!-- Post title -->
+      <h1 class="font-weight-bold mb-3"><strong>{{movie?.Title}}</strong></h1>
+      <p class="h3"><strong>{{movie?.imdbRating}}</strong> <mdb-icon fas icon="star" class="amber-text pl-1"></mdb-icon> | <strong>{{movie?.imdbVotes}}</strong> Votes</p>
+      <p>Duration: <strong>{{movie?.Runtime}}</strong></p>
+      <!-- Excerpt -->
+      <p>{{movie?.Plot}}</p>
+      <!-- data -->
+      <p>Director: <strong>{{movie?.Director}}</strong></p>
+      <p>Writers: <strong>{{movie?.Writer}}</strong></p>
+      <p>Actors: <strong>{{movie?.Actors}}</strong></p>
+      <p>Released: <strong>{{movie?.Released}}</strong></p>
+      <p>DVD: <strong>{{movie?.DVD}}</strong></p>
+      <p>BoxOffice: <strong>{{movie?.BoxOffice}}</strong></p>
+      <p>Production: <strong>{{movie?.Production}}</strong></p>
+      <p>Awards: <strong>{{movie?.Awards}}</strong></p>
+      <p>Official Website: <a href="{{movie?.Website}}">{{movie?.Website}}</a></p>
+      <!-- Watch more button -->
+      <a mdbBtn color="red" mdbWavesEffect class="font-weight-bold">Watch Now <mdb-icon far icon="play-circle" class="ml-2"></mdb-icon></a>
+      <button (click)="favoriteToggle(movie?.id)" mdbBtn type="button" color="amber" mdbWavesEffect>
+        <div *ngIf="favorites[movie?.id]?.isFavorite; else elseBlock">
+          Remove from my favorites 
+          <mdb-icon fas icon="star" class="ml-2"></mdb-icon>
+        </div>
+        <ng-template #elseBlock>
+          Add to my favorites 
+          <mdb-icon far icon="star" class="ml-2"></mdb-icon>
+        </ng-template>
+      </button>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Blog v.1 -->
