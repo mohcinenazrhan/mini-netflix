@@ -43,4 +43,8 @@ export class SingleComponent implements OnInit {
 	favoriteToggle(id: number): void {
 		this.userService.toggleUserFavorite(id);
 	}
+
+	goBack(): void {
+		this.location.back();
+	}
 }
