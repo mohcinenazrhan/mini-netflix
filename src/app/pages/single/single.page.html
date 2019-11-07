@@ -6,14 +6,16 @@
     <!-- Grid column -->
     <div class="col-lg-5">
 
-    <!-- Featured image -->
-    <div class="view overlay rounded z-depth-2 waves-light" mdbWavesEffect>
-      <img class="img-fluid" src="{{movie?.Poster}}" alt="Sample image">
-      <a>
-        <div class="mask rgba-white-slight"></div>
-      </a>
-      <a mdbBtn color="elegant" mdbWavesEffect class="m-0 w-100" (click)="goBack()"> <mdb-icon fas icon="chevron-circle-left mr-2"></mdb-icon> Back </a>
-    </div>
+      <!-- Back btn -->
+      <a mdbBtn color="black" mdbWavesEffect class="mx-0 w-100" (click)="goBack()"> <mdb-icon fas icon="chevron-circle-left mr-2"></mdb-icon> Back </a>
+
+      <!-- Featured image -->
+      <div class="view overlay rounded z-depth-2 waves-light" mdbWavesEffect>
+        <img class="img-fluid" src="{{movie?.Poster}}" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
 
     </div>
     <!-- Grid column -->
