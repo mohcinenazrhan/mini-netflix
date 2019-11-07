@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent, SingleComponent, FavoritesComponent } from './pages';
+import { HomeComponent, SingleComponent, FavoritesComponent, NotFoundComponent } from './pages';
 
 const routes: Routes = [
 	{
@@ -15,7 +15,12 @@ const routes: Routes = [
 	{
 		path: 'favorites',
 		component: FavoritesComponent
-	}
+	},
+	{
+		path: '404',
+		component: NotFoundComponent
+	},
+	{ path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

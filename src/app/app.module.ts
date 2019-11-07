@@ -6,7 +6,7 @@ import { MovieService } from './core/services';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent, SingleComponent, FavoritesComponent } from './pages';
+import { HomeComponent, SingleComponent, FavoritesComponent, NotFoundComponent } from './pages';
 import { FooterComponent, HeaderComponent } from './shared/components';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
@@ -17,7 +17,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 		SingleComponent,
 		FavoritesComponent,
 		FooterComponent,
-		HeaderComponent
+		HeaderComponent,
+		NotFoundComponent
 	],
 	imports: [
 		BrowserModule,
