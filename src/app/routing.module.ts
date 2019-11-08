@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { RouteActivator } from './core/services';
+
 import { HomeComponent, SingleComponent, FavoritesComponent, NotFoundComponent } from './pages';
 
 const routes: Routes = [
@@ -10,7 +12,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'single/:id',
-		component: SingleComponent
+		component: SingleComponent,
+		canActivate: [ RouteActivator ]
 	},
 	{
 		path: 'favorites',
