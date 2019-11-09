@@ -29,11 +29,7 @@ export class SingleComponent implements OnInit {
 	}
 
 	getMovie(): void {
-		const id = +this.route.snapshot.paramMap.get('id');
-		this.movieService.getMovie(id).subscribe((movie: Movie) => {
-			console.log(movie);
-			this.movie = movie;
-		});
+		this.movie = this.route.snapshot.data.movie;
 	}
 
 	getFavorites(): void {

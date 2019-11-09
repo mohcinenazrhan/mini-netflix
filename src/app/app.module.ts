@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { DataService } from './data.service';
-import { MovieService, RouteActivator } from './core/services';
+import { MovieService, RouteActivator, MovieDetailsResolver } from './core/services';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './routing.module';
 import { AppComponent } from './app.component';
@@ -27,7 +27,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 		HttpClientModule,
 		MDBBootstrapModule.forRoot()
 	],
-	providers: [ MovieService, RouteActivator ],
+	providers: [ MovieService, RouteActivator, MovieDetailsResolver ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}
